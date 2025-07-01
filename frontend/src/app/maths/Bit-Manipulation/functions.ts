@@ -42,8 +42,7 @@ export const swapNumbers = (a: number, b: number) => {
 };
 
 export const isSetBitAtIndex = (n: number, index: number) => {
-  const bool = n & (1 << index);
-  return bool !== 0;
+  return (n & (1 << index)) !== 0;
 };
 
 export const setBitAtIndex = (n: number, index: number) => {
@@ -63,8 +62,7 @@ export const removeLastSetBit = (n: number) => {
 };
 
 export const checkPowerOf2 = (n: number) => {
-  const num = n & (n - 1);
-  return num == 0;
+  return (n & (n - 1)) == 0;
 };
 
 export const countNoOfSetBits = (n: number) => {
