@@ -38,10 +38,40 @@ export const swapNumbers = (a: number, b: number) => {
   a = a ^ b;
   b = a ^ b;
   a = a ^ b;
-  return [a, b];
+  return { a, b };
 };
 
 export const isSetBitAtIndex = (n: number, index: number) => {
   const bool = n & (1 << index);
   return bool !== 0;
+};
+
+export const setBitAtIndex = (n: number, index: number) => {
+  return n | (1 << index);
+};
+
+export const clearBitAtIndex = (n: number, index: number) => {
+  return n & ~(1 << index);
+};
+
+export const toggleBitAtIndex = (n: number, index: number) => {
+  return n ^ (1 << index);
+};
+
+export const removeLastSetBit = (n: number) => {
+  return n & (n - 1);
+};
+
+export const checkPowerOf2 = (n: number) => {
+  const num = n & (n - 1);
+  return num == 0;
+};
+
+export const countNoOfSetBits = (n: number) => {
+  let count = 0;
+  while (n != 0) {
+    n = n & (n - 1);
+    count++;
+  }
+  return count;
 };
